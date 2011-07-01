@@ -28,9 +28,10 @@ $user_id = $decoded_data->user_id;
 echo "<script type='text/javascript'>" .
 	"var app_data = " . $app_data . ";"  .
 	"var app_id = " . $app_id . ";" .
-	"var user_id = " . $user_id . ";" .
+	"var user_id = " . (isset($user_id) ? $user_id : "-1") . ";" .
 	"var user_is_fan = " . ($user_is_fan ? "true" : "false") . ";" .
 "</script>";
+}
 
 // Now load the HTML of the app
 echo (file_get_contents("app.html"));

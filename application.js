@@ -19,9 +19,26 @@ function init() {
 	debug.log("app_id = " + app_id);
 	debug.log(app_data);
 	
+	// user_id will be undefined until basic permissions is granted
+	if (user_id != -1) debug.log("user_id = " + user_id);
+	
+//	requestEmailPermission('email,offline_access');	
+//	requestEmailPermission('email');
+	
 	// Test some methods
 	//loginAndRequestPermissions();
-	postToWall();
+	//postToWall();
+}
+
+function requestEmailPermission(perms)
+{
+	debug.log("requestEmailPermission");
+	FB.ui({method: "permissions.request", "perms": perms} , requestEmailPersmissionCallback);
+}
+
+function requestEmailPersmissionCallback(data)
+{
+	debug.log(data);
 }
 
 function postToWall() {
