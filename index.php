@@ -1,7 +1,7 @@
 <? require 'fbsdk/facebook.php';
 
-$app_id = "117494231646679";
-$app_secret = "7b96d2529cfc106f54aa4a3e47b6e96b";
+$app_id = "228242897186821";
+$app_secret = "688c7112c298ca9d8d71fd0aef22a0ec";
 
 $facebook = new Facebook(array(
 	'appId' => $app_id,
@@ -28,6 +28,7 @@ $user_id = $decoded_data->user_id;
 echo "<script type='text/javascript'>" .
 	"var app_data = " . $app_data . ";"  .
 	"var app_id = " . $app_id . ";" .
+	"var user_id = " . $user_id . ";" .
 	"var user_is_fan = " . ($user_is_fan ? "true" : "false") . ";" .
 "</script>";
 
